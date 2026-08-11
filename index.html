@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +16,13 @@
 </head>
 <body>
 
+<div class="preloader"><div class="preloader-mark">H</div></div>
+<div class="scroll-progress"></div>
 <div class="grain" aria-hidden="true"></div>
 
 <header class="site-header" id="top">
   <div class="wrap header-inner">
-    <a class="brand" href="#top">
+    <a class="brand" href="index.html">
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-name">Hanna&nbsp;Megaouel</span>
     </a>
@@ -29,11 +31,11 @@
         <span></span><span></span><span></span>
       </button>
       <ul id="navList">
-        <li><a href="#about">About</a></li>
-        <li><a href="#track-record">Track Record</a></li>
-        <li><a href="#specializations">Specializations</a></li>
-        <li><a href="#advisory">Advisory &amp; Lecturing</a></li>
-        <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="work.html">Track Record</a></li>
+        <li><a href="services.html">Specializations</a></li>
+        <li><a href="contact.html" class="nav-cta" data-magnetic>Let's Talk</a></li>
       </ul>
     </nav>
   </div>
@@ -43,18 +45,19 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="blueprint-grid" aria-hidden="true"></div>
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow">Strategy &middot; Sport &middot; Human Performance</p>
-        <h1>Turning ambition<br> into structure.</h1>
-        <p class="hero-lede">
+        <p class="eyebrow" data-reveal>Strategy &middot; Sport &middot; Human Performance</p>
+        <h1 data-reveal>Turning ambition<br> into structure.</h1>
+        <p class="hero-lede" data-reveal>
           I help organizations where performance and human experience intersect
           move from strategic intent to operational reality — across sport,
           health and technology, on four continents.
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Start a conversation</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/hannamegaouel/" target="_blank" rel="noopener">View LinkedIn</a>
+        <div class="hero-actions" data-reveal>
+          <a class="btn btn-primary" href="contact.html" data-magnetic>Start a conversation</a>
+          <a class="btn btn-ghost" href="about.html" data-magnetic>My story</a>
         </div>
       </div>
       <div class="hero-media">
@@ -65,23 +68,30 @@
       </div>
     </div>
     <div class="wrap">
-      <div class="stat-band">
-        <div class="stat"><span class="stat-num">4</span><span class="stat-label">Continents worked across</span></div>
-        <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Years in sport, health &amp; tech</span></div>
-        <div class="stat"><span class="stat-num">6</span><span class="stat-label">Organizations, one throughline</span></div>
-        <div class="stat"><span class="stat-num">5yr</span><span class="stat-label">Strategies built &amp; cascaded</span></div>
+      <div class="stat-band" data-reveal-group>
+        <div class="stat" data-reveal><span class="stat-num" data-count="4">0</span><span class="stat-label">Continents worked across</span></div>
+        <div class="stat" data-reveal><span class="stat-num" data-count="10">0</span><span class="stat-label">Years in sport, health &amp; tech</span></div>
+        <div class="stat" data-reveal><span class="stat-num" data-count="6">0</span><span class="stat-label">Organizations, one throughline</span></div>
+        <div class="stat" data-reveal><span class="stat-num" data-count="5">0</span><span class="stat-label">Year strategies built &amp; cascaded</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Strategy</span><span>Sport</span><span>Health</span><span>Technology</span><span>Executive Advisory</span><span>Lecturing</span>
+      <span>Strategy</span><span>Sport</span><span>Health</span><span>Technology</span><span>Executive Advisory</span><span>Lecturing</span>
+    </div>
+  </div>
+
+  <!-- ABOUT TEASER -->
   <section class="section" id="about">
     <div class="wrap about-grid">
-      <div class="section-heading">
+      <div class="section-heading" data-reveal>
         <p class="kicker">01 — About</p>
         <h2>A career built<br>across cultures.</h2>
       </div>
-      <div class="about-body">
+      <div class="about-body" data-reveal>
         <p>
           I've lived and worked across Europe, Asia, the Americas and Africa.
           Sport has been the constant at every step — as a practitioner, and
@@ -90,129 +100,77 @@
         </p>
         <p>
           Over the past decade I've operated inside some of the most demanding
-          environments in sport, health and technology, combining strategic
-          thinking with operational delivery: strategy consulting at
-          <strong>McKinsey</strong>, product and partnerships at
-          <strong>Microsoft</strong> and <strong>DAZN</strong>, regulated
-          health at <strong>Eli&nbsp;Lilly</strong>, and executive roles inside
-          professional football clubs at <strong>OGC&nbsp;Nice</strong> and
-          <strong>Sunderland&nbsp;AFC</strong> — leading multidisciplinary
-          teams across both the football and business sides of the
-          organization.
+          environments in sport, health and technology — strategy consulting,
+          product leadership, regulated health, and executive roles inside
+          professional football clubs. What drives me is where strategy has
+          a direct line to how someone performs, recovers, or competes.
         </p>
-        <p>
-          What drives me is where strategy has a direct line to how someone
-          performs, recovers, or competes. I bring both analytical rigour and
-          the instinct of someone who doesn't just study these markets, but
-          lives in them.
-        </p>
-        <a class="text-link" href="#specializations">See how I can help &rarr;</a>
+        <a class="text-link" href="about.html">Read my full story &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- TRACK RECORD -->
-  <section class="section section-alt" id="track-record">
+  <!-- SPECIALIZATIONS PREVIEW -->
+  <section class="section section-alt" id="specializations">
     <div class="wrap">
-      <div class="section-heading center">
-        <p class="kicker">02 — Track Record</p>
-        <h2>Where the work happened.</h2>
-        <p class="section-sub">Strategy consulting, product leadership and executive operations — inside organizations that don't leave room for theory.</p>
-      </div>
-
-      <ol class="timeline">
-        <li class="timeline-item">
-          <div class="timeline-marker" aria-hidden="true"></div>
-          <div class="timeline-content">
-            <h3>Sunderland AFC</h3>
-            <p class="role">Executive Role — Football &amp; Business Operations</p>
-            <p>Led multidisciplinary teams across both the football and business sides of the club, aligning day-to-day operations with long-term strategic direction.</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-marker" aria-hidden="true"></div>
-          <div class="timeline-content">
-            <h3>OGC Nice</h3>
-            <p class="role">Executive Role — Professional Football Operations</p>
-            <p>Owned cross-functional delivery inside a professional football club, translating strategic priorities into department-level execution.</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-marker" aria-hidden="true"></div>
-          <div class="timeline-content">
-            <h3>Eli Lilly</h3>
-            <p class="role">Regulated Health</p>
-            <p>Operated inside a highly regulated environment, bringing structure and rigour to complex, high-stakes decision-making.</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-marker" aria-hidden="true"></div>
-          <div class="timeline-content">
-            <h3>DAZN</h3>
-            <p class="role">Product &amp; Partnerships</p>
-            <p>Drove product and partnership initiatives at the intersection of sport, media and technology.</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-marker" aria-hidden="true"></div>
-          <div class="timeline-content">
-            <h3>Microsoft</h3>
-            <p class="role">Product &amp; Partnerships</p>
-            <p>Owned product roadmaps end-to-end and built cross-border partnerships at global scale.</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-marker" aria-hidden="true"></div>
-          <div class="timeline-content">
-            <h3>McKinsey &amp; Company</h3>
-            <p class="role">Strategy Consulting</p>
-            <p>Built the analytical and strategic foundation — 5-year strategies cascaded into department-level KPIs for demanding clients.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- SPECIALIZATIONS -->
-  <section class="section" id="specializations">
-    <div class="wrap">
-      <div class="section-heading center">
-        <p class="kicker">03 — Specializations</p>
+      <div class="section-heading center" data-reveal>
+        <p class="kicker">02 — Specializations</p>
         <h2>Where I bring the most value.</h2>
         <p class="section-sub">Setting direction, aligning functions around what actually matters, and staying accountable through to delivery.</p>
       </div>
 
-      <div class="card-grid">
-        <div class="service-card">
+      <div class="card-grid" data-reveal-group>
+        <div class="service-card" data-reveal data-tilt>
           <span class="service-index">01</span>
           <h3>Strategic Vision &amp; Planning</h3>
           <p>Building 5-year strategies and translating long-term ambition into a direction every function can act on.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal data-tilt>
           <span class="service-index">02</span>
           <h3>KPI Cascading &amp; Alignment</h3>
           <p>Turning strategic intent into department-level KPIs so teams stay aligned on what actually matters.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal data-tilt>
           <span class="service-index">03</span>
-          <h3>Product Roadmap Ownership</h3>
-          <p>Owning roadmaps end-to-end — from strategic rationale through to delivery and iteration.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-index">04</span>
-          <h3>Cross-Border Program Leadership</h3>
-          <p>Driving programs at scale across markets, cultures and regulatory contexts.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-index">05</span>
           <h3>Executive Advisory</h3>
           <p>Advising executives and teams on turning ambition into structure — direction, alignment, accountability.</p>
         </div>
-        <div class="service-card">
-          <span class="service-index">06</span>
-          <h3>Lecturing &amp; Applied Frameworks</h3>
-          <p>Teaching sport business, passing on frameworks tested in the field to the next generation of practitioners.</p>
-        </div>
+      </div>
+      <div class="section-foot">
+        <a class="text-link" href="services.html">View all six specializations &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK RECORD PREVIEW -->
+  <section class="section" id="track-record">
+    <div class="wrap">
+      <div class="section-heading center" data-reveal>
+        <p class="kicker">03 — Track Record</p>
+        <h2>Where the work happened.</h2>
+        <p class="section-sub">McKinsey, Microsoft, DAZN, Eli Lilly, OGC Nice, Sunderland AFC — strategy consulting, product leadership and executive football operations.</p>
+      </div>
+
+      <ol class="timeline" data-reveal-group>
+        <li class="timeline-item" data-reveal>
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <h3>Sunderland AFC</h3>
+            <p class="role">Executive Role — Football &amp; Business Operations</p>
+            <p>Led multidisciplinary teams across both the football and business sides of the club.</p>
+          </div>
+        </li>
+        <li class="timeline-item" data-reveal>
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <h3>McKinsey &amp; Company</h3>
+            <p class="role">Strategy Consulting</p>
+            <p>Built 5-year strategies cascaded into department-level KPIs for demanding clients.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="section-foot">
+        <a class="text-link" href="work.html">See the full track record &rarr;</a>
       </div>
     </div>
   </section>
@@ -220,10 +178,10 @@
   <!-- ADVISORY / LECTURING FEATURE -->
   <section class="section section-feature" id="advisory">
     <div class="wrap feature-grid">
-      <div class="feature-media">
+      <div class="feature-media" data-reveal>
         <img src="https://picsum.photos/seed/hanna-advisory/900/700" alt="Placeholder image representing advisory and lecturing work" loading="lazy">
       </div>
-      <div class="feature-copy">
+      <div class="feature-copy" data-reveal>
         <p class="kicker">04 — Advisory &amp; Lecturing</p>
         <h2>Frameworks tested in the field.</h2>
         <p>
@@ -232,25 +190,20 @@
           proven across strategy consulting, product leadership and
           professional football operations.
         </p>
-        <p>
-          If you're setting direction, aligning teams around what matters, or
-          need a partner who has lived inside the markets they study, let's
-          talk.
-        </p>
-        <a class="btn btn-primary" href="#contact">Book a conversation</a>
+        <a class="btn btn-primary" href="contact.html" data-magnetic>Book a conversation</a>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACT CTA -->
   <section class="section section-contact" id="contact">
     <div class="wrap contact-inner">
-      <p class="kicker">05 — Let's Discuss</p>
-      <h2>Have a strategy that needs<br>a route to delivery?</h2>
-      <p class="section-sub">I bring most value where strategic intent has to become operational reality. Let's talk about where you are and where you need to be.</p>
-      <div class="contact-actions">
-        <a class="btn btn-primary btn-lg" href="mailto:hannamegaouelpro@gmail.com">hannamegaouelpro@gmail.com</a>
-        <a class="btn btn-ghost btn-lg" href="https://www.linkedin.com/in/hannamegaouel/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      <p class="kicker" data-reveal>05 — Let's Discuss</p>
+      <h2 data-reveal>Have a strategy that needs<br>a route to delivery?</h2>
+      <p class="section-sub" data-reveal>I bring most value where strategic intent has to become operational reality. Let's talk about where you are and where you need to be.</p>
+      <div class="contact-actions" data-reveal>
+        <a class="btn btn-primary btn-lg" href="mailto:hannamegaouelpro@gmail.com" data-magnetic>hannamegaouelpro@gmail.com</a>
+        <a class="btn btn-ghost btn-lg" href="contact.html" data-magnetic>All contact details</a>
       </div>
     </div>
   </section>
@@ -258,12 +211,42 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <span>&copy; <span id="year"></span> Hanna Megaouel</span>
-    <a href="#top">Back to top &uarr;</a>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">Hanna&nbsp;Megaouel</span>
+        </a>
+        <p>Strategy consulting, executive advisory and lecturing across sport, health and technology.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Track Record</a></li>
+          <li><a href="services.html">Specializations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:hannamegaouelpro@gmail.com">hannamegaouelpro@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/hannamegaouel/" target="_blank" rel="noopener">LinkedIn &rarr;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-inner">
+      <span>&copy; <span id="year"></span> Hanna Megaouel</span>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
