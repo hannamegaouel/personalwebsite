@@ -1,6 +1,6 @@
 /* Hanna Megaouel — Portfolio interactions
-   Preloader, custom cursor, Lenis smooth scroll, GSAP scroll reveals,
-   parallax hero, magnetic buttons, marquee, counters, nav scrollspy. */
+   Preloader, Lenis smooth scroll, GSAP scroll reveals, parallax hero,
+   magnetic buttons, marquee, counters, nav scrollspy, case-study modals. */
 
 document.documentElement.classList.remove("no-js");
 
@@ -73,34 +73,6 @@ if (!reduceMotion && window.Lenis) {
     requestAnimationFrame(raf);
   }
   requestAnimationFrame(raf);
-}
-
-/* ---------- Custom cursor ---------- */
-if (!isTouch) {
-  document.body.classList.add("has-custom-cursor");
-  const dot = document.createElement("div");
-  dot.className = "cursor-dot";
-  const ring = document.createElement("div");
-  ring.className = "cursor-ring";
-  document.body.append(dot, ring);
-
-  let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
-  addEventListener("mousemove", (e) => {
-    mx = e.clientX;
-    my = e.clientY;
-    dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
-  });
-  (function loop() {
-    rx += (mx - rx) * 0.16;
-    ry += (my - ry) * 0.16;
-    ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-    requestAnimationFrame(loop);
-  })();
-
-  document.querySelectorAll("a, button, [data-magnetic]").forEach((el) => {
-    el.addEventListener("mouseenter", () => ring.classList.add("is-active"));
-    el.addEventListener("mouseleave", () => ring.classList.remove("is-active"));
-  });
 }
 
 /* ---------- Magnetic buttons ---------- */
@@ -216,4 +188,57 @@ if (window.gsap) {
     { threshold: 0.15 }
   );
   targets.forEach((el) => io.observe(el));
+}
+
+/* ---------- Case-study horizontal scroll ---------- */
+document.querySelectorAll("[data-case-scroll]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const track = btn.parentElement.querySelector(".case-scroll");
+    if (!track) return;
+    const card = track.querySelector(".case-card");
+    const step = card ? card.getBoundingClientRect().width + 24 : 360;
+    track.scrollBy({ left: step * Number(btn.getAttribute("data-case-scroll")), behavior: "smooth" });
+  });
+});
+
+/* ---------- Case-study modals ---------- */
+const caseCards = document.querySelectorAll("[data-case]");
+if (caseCards.length) {
+  const openModal = (id) => {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.add("is-open");
+    document.body.classList.add("modal-open");
+    if (lenis) lenis.stop();
+  };
+  const closeModal = (modal) => {
+    modal.classList.remove("is-open");
+    document.body.classList.remove("modal-open");
+    if (lenis) lenis.start();
+  };
+
+  caseCards.forEach((card) => {
+    card.addEventListener("click", () => openModal(card.getAttribute("data-case")));
+    card.setAttribute("tabindex", "0");
+    card.setAttribute("role", "button");
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openModal(card.getAttribute("data-case"));
+      }
+    });
+  });
+
+  document.querySelectorAll(".case-modal-overlay").forEach((overlay) => {
+    overlay.querySelector(".case-modal-close")?.addEventListener("click", () => closeModal(overlay));
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) closeModal(overlay);
+    });
+  });
+
+  addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      document.querySelectorAll(".case-modal-overlay.is-open").forEach(closeModal);
+    }
+  });
 }
