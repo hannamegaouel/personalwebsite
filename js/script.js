@@ -1,6 +1,8 @@
 /* Hanna Megaouel — Portfolio interactions
-   Preloader, Lenis smooth scroll, GSAP scroll reveals, parallax hero,
-   magnetic buttons, marquee, counters, nav scrollspy, case-study modals. */
+   Preloader, GSAP scroll reveals, parallax hero, magnetic buttons,
+   marquee, counters, nav scrollspy, case-study modals. Scrolling itself
+   is left entirely to the browser (no smooth-scroll library) so it's
+   always native and responsive on trackpads. */
 
 document.documentElement.classList.remove("no-js");
 
@@ -8,7 +10,6 @@ const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 const isTouch = matchMedia("(hover: none), (pointer: coarse)").matches;
-const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* ---------- Preloader ---------- */
 const preloader = document.querySelector(".preloader");
@@ -59,21 +60,6 @@ function updateProgress() {
 }
 document.addEventListener("scroll", updateProgress, { passive: true });
 updateProgress();
-
-/* ---------- Lenis smooth scroll ---------- */
-let lenis = null;
-if (!reduceMotion && window.Lenis) {
-  lenis = new Lenis({ duration: 1.1, smoothWheel: true });
-  lenis.on("scroll", () => {
-    updateProgress();
-    if (window.ScrollTrigger) ScrollTrigger.update();
-  });
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-}
 
 /* ---------- Magnetic buttons ---------- */
 if (!isTouch) {
@@ -202,17 +188,15 @@ document.querySelectorAll("[data-case-scroll]").forEach((btn) => {
 });
 
 /* Prevent horizontally-scrollable card rows from hijacking vertical page scroll
-   (browsers redirect vertical wheel input to the only available scroll axis).
-   When Lenis is active, letting the event keep bubbling to its own window
-   listener already produces the smooth scroll; if Lenis failed to load,
-   fall back to a native scroll so the page never gets stuck. */
+   (browsers redirect vertical wheel input to the only available scroll axis
+   when an element only overflows horizontally). */
 document.querySelectorAll(".case-scroll").forEach((track) => {
   track.addEventListener(
     "wheel",
     (e) => {
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
         e.preventDefault();
-        if (!lenis) window.scrollBy(0, e.deltaY);
+        window.scrollBy(0, e.deltaY);
       }
     },
     { passive: false }
@@ -227,12 +211,10 @@ if (caseCards.length) {
     if (!modal) return;
     modal.classList.add("is-open");
     document.body.classList.add("modal-open");
-    if (lenis) lenis.stop();
   };
   const closeModal = (modal) => {
     modal.classList.remove("is-open");
     document.body.classList.remove("modal-open");
-    if (lenis) lenis.start();
   };
 
   caseCards.forEach((card) => {
