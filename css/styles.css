@@ -517,8 +517,9 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 }
 .about-wide-photo img {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 3/2;
   object-fit: cover;
+  object-position: center 62%;
   display: block;
 }
 .about-wide-photo figcaption {
