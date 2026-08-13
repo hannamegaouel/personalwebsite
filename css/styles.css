@@ -507,16 +507,26 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   line-height: 1.4;
 }
 
-.about-photo {
+.about-body-solo { max-width: 720px; margin: 0 auto; }
+
+.about-wide-photo {
+  margin: 0;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 0 34px 60px -30px rgba(22, 35, 46, 0.35);
 }
-.about-photo img {
+.about-wide-photo img {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 16/9;
   object-fit: cover;
   display: block;
+}
+.about-wide-photo figcaption {
+  padding: 18px 4px 0;
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--ink-faint);
+  text-align: center;
 }
 
 .value-grid {
