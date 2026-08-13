@@ -730,8 +730,22 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
   position: relative;
   transform: translateY(16px) scale(0.98);
   transition: transform 0.35s var(--ease-soft);
+  scrollbar-width: auto;
+  scrollbar-color: var(--sky-deep) var(--sky-200);
 }
 .case-modal-overlay.is-open .case-modal { transform: translateY(0) scale(1); }
+
+/* Always-visible scrollbar inside the case-study popup — the content
+   often runs longer than the visible box, and this makes that obvious
+   and easy to grab (rather than relying on wheel/trackpad alone). */
+.case-modal::-webkit-scrollbar { width: 12px; }
+.case-modal::-webkit-scrollbar-track { background: var(--sky-200); border-radius: var(--radius-lg); }
+.case-modal::-webkit-scrollbar-thumb {
+  background: var(--sky-deep);
+  border-radius: 999px;
+  border: 3px solid var(--sky-200);
+}
+.case-modal::-webkit-scrollbar-thumb:hover { background: var(--ink); }
 
 .case-modal-close {
   position: absolute;
