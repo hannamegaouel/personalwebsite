@@ -31,9 +31,23 @@
 
 html {
   scroll-behavior: auto; /* Lenis owns smooth scroll */
+  scrollbar-width: auto;
+  scrollbar-color: var(--sky-deep) var(--sky-100);
 }
 
 html.no-js { scroll-behavior: smooth; }
+
+/* Always-visible page scrollbar (macOS/trackpad users default to
+   auto-hiding overlay scrollbars, which makes it hard to tell the page
+   is scrollable at all) */
+html::-webkit-scrollbar { width: 14px; }
+html::-webkit-scrollbar-track { background: var(--sky-100); }
+html::-webkit-scrollbar-thumb {
+  background: var(--sky-400);
+  border-radius: 999px;
+  border: 3px solid var(--sky-100);
+}
+html::-webkit-scrollbar-thumb:hover { background: var(--sky-deep); }
 
 body {
   margin: 0;
