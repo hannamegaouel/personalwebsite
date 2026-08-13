@@ -201,6 +201,24 @@ document.querySelectorAll("[data-case-scroll]").forEach((btn) => {
   });
 });
 
+/* Prevent horizontally-scrollable card rows from hijacking vertical page scroll
+   (browsers redirect vertical wheel input to the only available scroll axis).
+   When Lenis is active, letting the event keep bubbling to its own window
+   listener already produces the smooth scroll; if Lenis failed to load,
+   fall back to a native scroll so the page never gets stuck. */
+document.querySelectorAll(".case-scroll").forEach((track) => {
+  track.addEventListener(
+    "wheel",
+    (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        if (!lenis) window.scrollBy(0, e.deltaY);
+      }
+    },
+    { passive: false }
+  );
+});
+
 /* ---------- Case-study modals ---------- */
 const caseCards = document.querySelectorAll("[data-case]");
 if (caseCards.length) {
