@@ -703,6 +703,89 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .case-nav-btn.prev { left: -22px; }
 .case-nav-btn.next { right: -22px; }
 
+/* ---------- Project grid (full Track Record page) ---------- */
+
+.proj-grid { display: flex; flex-direction: column; gap: 24px; }
+.proj-row { display: grid; gap: 24px; }
+.proj-row--feature { grid-template-columns: 2fr 1fr; }
+.proj-row--three { grid-template-columns: repeat(3, 1fr); }
+.proj-row--two { grid-template-columns: repeat(2, 1fr); }
+.proj-row--one { grid-template-columns: 1fr; }
+
+.proj-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 22px 40px -26px rgba(22, 35, 46, 0.32);
+  transition: box-shadow 0.35s var(--ease-soft);
+}
+.proj-card:hover { box-shadow: 0 34px 56px -26px rgba(22, 35, 46, 0.42); }
+
+.proj-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-soft);
+}
+.proj-card:hover img { transform: scale(1.06); }
+
+.proj-card--wide { aspect-ratio: 2/1; }
+.proj-card--square { aspect-ratio: 1/1; }
+.proj-card--standard { aspect-ratio: 4/3; }
+.proj-card--medium { aspect-ratio: 3/2; }
+.proj-card--banner { aspect-ratio: 3/1; }
+
+.proj-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px 24px;
+  background: linear-gradient(to top, rgba(15, 23, 32, 0.85) 0%, rgba(15, 23, 32, 0.38) 45%, rgba(15, 23, 32, 0) 72%);
+  color: #fff;
+}
+.proj-card-tag {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  padding: 5px 13px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+.proj-card-overlay h3 { color: #fff; margin: 0 0 4px; font-size: 1.1rem; line-height: 1.25; }
+.proj-card--wide .proj-card-overlay h3,
+.proj-card--banner .proj-card-overlay h3 { font-size: 1.55rem; }
+.proj-card-org { font-size: 0.85rem; color: rgba(255, 255, 255, 0.78); margin: 0; }
+
+.proj-card-arrow {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  color: var(--ink);
+  opacity: 0;
+  transform: translateY(-6px) scale(0.9);
+  transition: opacity 0.3s var(--ease-soft), transform 0.3s var(--ease-soft);
+}
+.proj-card:hover .proj-card-arrow,
+.proj-card:focus-visible .proj-card-arrow { opacity: 1; transform: translateY(0) scale(1); }
+
 /* ---------- Case-study modal ---------- */
 
 .case-modal-overlay {
@@ -1026,6 +1109,10 @@ body.modal-open { overflow: hidden; }
   .service-detail-body { grid-template-columns: 1fr; }
   .contact-detail-grid { grid-template-columns: 1fr; }
   .footer-top { flex-direction: column; gap: 32px; }
+  .proj-row--feature { grid-template-columns: 1fr 1fr; }
+  .proj-row--three { grid-template-columns: repeat(2, 1fr); }
+  .proj-card--wide { aspect-ratio: 3/2; }
+  .proj-card--square { aspect-ratio: 3/2; }
 }
 
 @media (max-width: 720px) {
@@ -1067,4 +1154,12 @@ body.modal-open { overflow: hidden; }
   .marquee-track { animation-duration: 16s; }
   .case-nav-btn { display: none; }
   .case-modal-body { padding: 26px 22px 32px; }
+  .proj-row--feature,
+  .proj-row--three,
+  .proj-row--two { grid-template-columns: 1fr; }
+  .proj-card--wide,
+  .proj-card--banner { aspect-ratio: 16/10; }
+  .proj-card--square,
+  .proj-card--standard,
+  .proj-card--medium { aspect-ratio: 4/3; }
 }
