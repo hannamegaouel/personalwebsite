@@ -883,6 +883,22 @@ body.modal-open { overflow: hidden; }
 
 .feature-copy p { font-size: 1.08rem; }
 
+/* ---------- Book ---------- */
+
+.book-grid { display: grid; grid-template-columns: 0.45fr 1fr; gap: 64px; align-items: center; }
+
+.book-cover {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: 0 34px 60px -26px rgba(22, 35, 46, 0.4);
+  max-width: 320px;
+}
+.book-cover img { width: 100%; aspect-ratio: 2/3; object-fit: cover; display: block; }
+
+.book-title { font-size: 1.1rem; font-weight: 600; color: var(--sky-deep); margin: 4px 0 20px; }
+.book-copy p:not(.book-title) { font-size: 1.08rem; }
+.book-copy em { font-style: italic; color: var(--ink); }
+
 /* ---------- Contact ---------- */
 
 .section-contact { text-align: center; position: relative; }
@@ -999,6 +1015,8 @@ body.modal-open { overflow: hidden; }
   .about-photo { position: static; }
   .feature-grid { grid-template-columns: 1fr; gap: 40px; }
   .feature-media { order: -1; }
+  .book-grid { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+  .book-cover { margin: 0 auto; }
   .card-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-band { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
   .stat { border-left: none; padding-left: 0; }
