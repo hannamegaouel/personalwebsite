@@ -854,6 +854,9 @@ p { margin: 0 0 1em; color: var(--ink-soft); }
 .case-modal-body { padding: 32px 36px 40px; }
 .case-modal-body .role { font-size: 0.9rem; font-weight: 600; color: var(--sand); text-transform: uppercase; letter-spacing: 0.04em; margin: 10px 0 18px; }
 .case-modal-body h3 { font-size: 1.6rem; }
+.case-list { list-style: none; margin: 0 0 1em; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.case-list li { position: relative; padding-left: 22px; color: var(--ink-soft); }
+.case-list li::before { content: "\2192"; position: absolute; left: 0; color: var(--ink-faint); }
 
 body.modal-open { overflow: hidden; }
 
