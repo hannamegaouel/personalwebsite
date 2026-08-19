@@ -1154,7 +1154,7 @@ body.modal-open { overflow: hidden; }
   .timeline-item { padding-left: 32px; }
   .timeline-content { padding: 22px 20px; }
   h1 { font-size: 2.6rem; }
-  .marquee-track { animation-duration: 16s; }
+  .marquee-track { animation-duration: 32s; }
   .case-nav-btn { display: none; }
   .case-modal-body { padding: 26px 22px 32px; }
   .proj-row--feature,
